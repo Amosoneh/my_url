@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('urlapi', '0002_alter_urlshortener_shorturl'),
+        ('shortener', '0002_alter_urlshortener_shorturl'),
     ]
 
     operations = [

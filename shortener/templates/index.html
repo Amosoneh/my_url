@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport"
+              content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static 'index.css' %}">
+    </head>
+    <body>
+        <main>
+            <h1>URL Shortener</h1>
+            <form method="post" action="{% url 'url:shorten-url' %}">
+            {% csrf_token %}
+            <input type="text" name="link" id="longurl" placeholder="Enter URL here" required>
+            <div class="buttons">
+            <button type="submit" id="shorten">Shorten</button>
+            </div>
+            </form>
+
+            <section id="section"><h2>{{ shorturl  }}</h2></section>
+
+        </main>
+
+    </body>
+</html>

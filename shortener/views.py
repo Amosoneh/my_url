@@ -10,7 +10,7 @@ def urlShort(request):
     if request.method == 'POST':
         shorturl = ''.join(random.choice(string.ascii_letters)
                            for x in range(5))
-        short = 'http://localhost:8000/' + shorturl
+        short = 'https://my-url.up.railway.app' + shorturl
         longurl = request.POST['link']
         new_url = UrlShortener(longurl=longurl, shorturl=short)
         new_url.save()
@@ -24,7 +24,7 @@ def urlShort(request):
 
 
 def urlRedirect(request, pk):
-    data = get_object_or_404(UrlShortener, shorturl="http://localhost:8000/" + pk)
+    data = get_object_or_404(UrlShortener, shorturl="https://my-url.up.railway.app" + pk)
     return redirect('https://' + data.longurl)
 
 

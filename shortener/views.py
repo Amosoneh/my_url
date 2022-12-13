@@ -15,6 +15,7 @@ def urlShort(request):
         new_url = UrlShortener(longurl=longurl, shorturl=short)
         new_url.save()
         return render(request, 'index.html', context={'shorturl': short})
+
     data = UrlShortener()
     context = {
         'data': data
